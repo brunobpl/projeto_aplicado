@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
 }
 
 header {
@@ -20,7 +19,7 @@ header {
     border-radius: 8px;
     width: 100%;
     max-width: 400px;
-    margin: 120px auto;
+    margin: 60px auto;
 }
 
 h2 {
