@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque - Gestão de Estoque</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="layout">
+        <nav class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="#listar-fornecedores">Listar Fornecedores</a></li>
+                <li><a href="#listar-compradores">Listar Compradores</a></li>               
+                <li><a href="#listar-consumo">Listar Consumo por Projeto</a></li>
+                <li>
+                    <button id="openModal" class="menu-button">Dar Entrada em Produtos</button>
+                </li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <header>
+                <h1>Estoque</h1>
+            </header>
+            <section>
+                <h2>Produtos Disponíveis</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome do Produto</th>
+                            <th>Especialidade</th>
+                            <th>Descrição</th>
+                            <th>Unidade de Medida</th>
+                            <th>Preço Unitário</th>
+                            <th>Quantidade</th>
+                            <th>Localização</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Produto A</td>
+                            <td>Especialidade A</td>
+                            <td>Descrição A</td>
+                            <td>Unidade A</td>
+                            <td>R$ 10,00</td>
+                            <td>100</td>
+                            <td>Local A</td>
+                        </tr>
+                        <!-- Outras linhas de exemplo podem ser adicionadas -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <!-- Janela Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Dar Entrada em Produtos</h2>
+            <form>
+                <label for="fornecedor">Fornecedor:</label>
+                <input type="text" id="fornecedor" name="fornecedor" required>
+
+                <label for="comprador">Comprador:</label>
+                <input type="text" id="comprador" name="comprador" required>
+
+                <label for="data-emissao">Data de Emissão:</label>
+                <input type="date" id="data-emissao" name="data-emissao" required>
+
+                <label for="data-entrada">Data de Entrada:</label>
+                <input type="date" id="data-entrada" name="data-entrada" required>
+
+                <label for="produto">Nome do Produto:</label>
+                <input type="text" id="produto" name="produto" required>
+
+                <label for="descricao">Descrição do Produto:</label>
+                <input type="text" id="descricao" name="descricao" required>
+
+                <label for="preco-unitario">Preço Unitário:</label>
+                <input type="number" id="preco-unitario" name="preco-unitario" step="0.01" required>
+
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" name="quantidade" required>
+
+                <label for="localizacao">Localização:</label>
+                <input type="text" id="localizacao" name="localizacao" required>
+
+                <button type="submit">Registrar Produto</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("modal");
+        const openModal = document.getElementById("openModal");
+        const closeModal = document.getElementById("closeModal");
+
+        openModal.onclick = () => modal.style.display = "block";
+        closeModal.onclick = () => modal.style.display = "none";
+        window.onclick = (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
